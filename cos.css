@@ -5,6 +5,7 @@ body{
 
 #wynik{
     color: yellow;
+    font-size: 20px;
 }
 
 input:hover{
