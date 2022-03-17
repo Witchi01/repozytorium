@@ -1,7 +1,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<script>
+        <link rel=stylesheet href="cos.css">
+		<script type="text/javascript">
 			function oblicz(c)
 			{
 				var a = parseInt(document.getElementById("a").value);
@@ -28,28 +29,37 @@
 						var w=a/b;
 						break;
 					}
+                    case '^':
+                    {
+                        var w = Math.pow(a, b);
+                        break;
+                    }
 					default:
 					{
 						w="bledna operacja";
 						break;
 					}
 				}
-				document.getElementById("wynik").innerHTML = w;
+              document.getElementById('wynik').innerHTML = w;
 			}
 		</script>
 	</head>
 	<body>
-		<form>
+		    <div id=start>
 			<input type="text" id="a">
 			<input type="text" id="b">
+            </div>
 			<br><br>
 			Co chcesz zrobic?<br>
+            <div id=buttonki>
 			<input type="button" id="+" value="+" onClick="oblicz('+')">
 			<input type="button" id="-" value="-" onClick="oblicz('-')">
 			<input type="button" id="*" value="*" onClick="oblicz('*')">
 			<input type="button" id="/" value="/" onClick="oblicz('/')">
+            <input type="button" id="^" value="^" onClick="oblicz('^')">
+            </div>
 			<br>
 			Wynik: <div id="wynik"></div>
-		</form>
+		
 	</body>
 </html>
